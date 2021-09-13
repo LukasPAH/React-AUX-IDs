@@ -1,0 +1,38 @@
+[
+    {
+        "namespace_id": "acacia_boat",
+        "type": "Item (New)",
+        "item_id": 395,
+        "item_data": 0
+    },
+    {
+        "namespace_id": "stone",
+        "type": "Block",
+        "item_id": 1,
+        "item_data": 0
+    },
+    {
+        "namespace_id": "red_bed",
+        "type": "Item (New)",
+        "item_id": 257,
+        "item_data": 0
+    },
+    {
+        "namespace_id": "elytra",
+        "type": "Item",
+        "item_id": "IDK",
+        "item_data": 0
+    },
+    {
+        "namespace_id": "farmland",
+        "type": "Block",
+        "item_id": "who cares",
+        "item_data": 0
+    },
+    {
+        "namespace_id": "shroomlight",
+        "type": "Item",
+        "item_id": "IDK",
+        "item_data": 0
+    }
+]

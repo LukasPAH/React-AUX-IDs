@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "namespace_id": "acacia_boat",
+            "type": "Item",
+            "item_id": 395,
+            "item_data": 0,
+            "component": "foo"
+        },
+        {
+            "namespace_id": "acacia_button",
+            "type": "Block",
+            "item_id": 333,
+            "item_data": 4,
+            "component": "foo"
+        },
+        {
+            "namespace_id": "apple",
+            "type": "Item",
+            "item_id": 257,
+            "item_data": 0,
+            "component": "foo"
+        },
+        {
+            "namespace_id": "netherite_sword",
+            "type": "Item",
+            "item_id": "IDK",
+            "item_data": 0,
+            "component": "foo"
+        }
+    ]
+}
