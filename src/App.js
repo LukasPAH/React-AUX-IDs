@@ -161,9 +161,6 @@ function App() {
                                                 return;
                                             }
                                             setCopied(true);
-                                            isStable(false);
-                                            shouldUpdate(true);
-                                            setIsLoaded(false);
                                         }}
                                     >
                                         <div className="card-image">
