@@ -9,42 +9,70 @@ function App() {
     const [searchParam] = useState(["namespace_id", "item_id", "aux_id"]);
     const [filterParam, setFilterParam] = useState(["All"]);
     const [copied, setCopied] = useState(null);
+    const [stable, isStable] = useState(true);
+    const [update, shouldUpdate] = useState(false);
+
+    function updateData() {
+        fetch("https://raw.githubusercontent.com/bedrock-dot-dev/docs/master/tags.json")
+            .then((response) => response.json())
+            .then((data) =>
+                fetch(`https://raw.githubusercontent.com/bedrock-dot-dev/docs/master/${data[gameType][0]}/${data[gameType][1]}/Addons.html`)
+                    .then(function (response) {
+                        // When the page is loaded convert it to text
+                        return response.text();
+                    })
+                    .then(function (html) {
+                        // Initialize the DOM parser
+                        var parser = new DOMParser();
+
+                        // Parse the text
+                        var doc = parser.parseFromString(html, "text/html");
+
+                        // You can now even select part of that html as you would in the regular DOM
+                        // Example:
+                        var docArticle = doc.getElementsByTagName("table").item(9).textContent;
+
+                        // Formatting of text into json, then convert to JSON.
+                        var json_1 = docArticle.replace("\n Name ID Aux Values \n\n", "[ { 'namespace_id': '");
+                        var json_2 = json_1.replace(/\n\n\n\n/g, " }, { 'namespace_id': '");
+                        var json_3 = json_2.replace(/\n0 = Skeleton1 = Wither2 = Zombie3 = Steve4 = Creeper5 = Dragon\n\n\n/g, " }, { 'namespace_id': '");
+                        var json_4 = json_3.replace(/\n\n\n/g, " } ]");
+                        var json_5 = json_4.replace(/\n/g, "', 'item_id': ");
+                        var json_6 = json_5.replace(/'/g, `"`);
+                        var actual_json = JSON.parse(json_6);
+
+                        console.log(actual_json);
+                        setItems(actual_json);
+                        setIsLoaded(true);
+                    })
+                    .catch(function (err) {
+                        console.log("Failed to fetch page: ", err);
+                        setIsLoaded(true);
+                        setError(error);
+                    })
+            );
+    }
+
+    if (stable) {
+        var gameType = "stable";
+        console.log("stable");
+    }
+    if (!stable) {
+        var gameType = "beta";
+        console.log("beta");
+    }
+
+    if (stable && update) {
+        updateData();
+        shouldUpdate(false);
+    }
+    if (!stable && update) {
+        updateData();
+        shouldUpdate(false);
+    }
 
     useEffect(() => {
-        fetch("https://raw.githubusercontent.com/bedrock-dot-dev/docs/master/1.17.0.0/1.17.30.24/Addons.html")
-            .then(function (response) {
-                // When the page is loaded convert it to text
-                return response.text();
-            })
-            .then(function (html) {
-                // Initialize the DOM parser
-                var parser = new DOMParser();
-
-                // Parse the text
-                var doc = parser.parseFromString(html, "text/html");
-
-                // You can now even select part of that html as you would in the regular DOM
-                // Example:
-                var docArticle = doc.getElementsByTagName("table").item(9).textContent;
-
-                // Formatting of text into json, then convert to JSON.
-                var json_1 = docArticle.replace("\n Name ID Aux Values \n\n", "[ { 'namespace_id': '");
-                var json_2 = json_1.replace(/\n\n\n\n/g, " }, { 'namespace_id': '");
-                var json_3 = json_2.replace(/\n0 = Skeleton1 = Wither2 = Zombie3 = Steve4 = Creeper5 = Dragon\n\n\n/g, " }, { 'namespace_id': '");
-                var json_4 = json_3.replace(/\n\n\n/g, " } ]");
-                var json_5 = json_4.replace(/\n/g, "', 'item_id': ");
-                var json_6 = json_5.replace(/'/g, `"`);
-                var actual_json = JSON.parse(json_6);
-
-                console.log(actual_json);
-                setItems(actual_json);
-                setIsLoaded(true);
-            })
-            .catch(function (err) {
-                console.log("Failed to fetch page: ", err);
-                setIsLoaded(true);
-                setError(error);
-            });
+        updateData();
     }, []);
 
     function search(items) {
@@ -86,6 +114,26 @@ function App() {
                         <div className="select">
                             <select
                                 onChange={(e) => {
+                                    if (!stable) {
+                                        isStable(true);
+                                        shouldUpdate(true);
+                                    }
+                                    if (stable) {
+                                        isStable(false);
+                                        shouldUpdate(true);
+                                    }
+                                }}
+                                className="custom-select"
+                                aria-label="Filter Countries By Region"
+                            >
+                                <option value="Stable">Stable</option>
+                                <option value="Beta">Beta</option>
+                            </select>
+                            <span className="focus"></span>
+                        </div>
+                        <div className="select">
+                            <select
+                                onChange={(e) => {
                                     setFilterParam(e.target.value);
                                 }}
                                 className="custom-select"
@@ -113,6 +161,9 @@ function App() {
                                                 return;
                                             }
                                             setCopied(true);
+                                            isStable(false);
+                                            shouldUpdate(true);
+                                            setIsLoaded(false);
                                         }}
                                     >
                                         <div className="card-image">
