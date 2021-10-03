@@ -1,38 +1,71 @@
 [
     {
-        "namespace_id": "acacia_boat",
-        "type": "Item (New)",
-        "item_id": 395,
-        "item_data": 0
-    },
-    {
-        "namespace_id": "stone",
-        "type": "Block",
-        "item_id": 1,
-        "item_data": 0
-    },
-    {
-        "namespace_id": "red_bed",
-        "type": "Item (New)",
-        "item_id": 257,
-        "item_data": 0
-    },
-    {
-        "namespace_id": "elytra",
-        "type": "Item",
-        "item_id": "IDK",
-        "item_data": 0
-    },
-    {
-        "namespace_id": "farmland",
-        "type": "Block",
-        "item_id": "who cares",
-        "item_data": 0
-    },
-    {
-        "namespace_id": "shroomlight",
-        "type": "Item",
-        "item_id": "IDK",
-        "item_data": 0
+        "identifier": "bed",
+        "data": [
+            {
+                "alias": "White Bed",
+                "data": 0
+            },
+            {
+                "alias": "Orange Bed",
+                "data": 1
+            },
+            {
+                "alias": "Magenta Bed",
+                "data": 2
+            },
+            {
+                "alias": "Light Blue Bed",
+                "data": 3
+            },
+            {
+                "alias": "Yellow Bed",
+                "data": 4
+            },
+            {
+                "alias": "Lime Bed",
+                "data": 5
+            },
+            {
+                "alias": "Pink Bed",
+                "data": 6
+            },
+            {
+                "alias": "Gray Bed",
+                "data": 7
+            },
+            {
+                "alias": "Light Gray Bed",
+                "data": 8
+            },
+            {
+                "alias": "Cyan Bed",
+                "data": 9
+            },
+            {
+                "alias": "Purple Bed",
+                "data": 10
+            },
+            {
+                "alias": "Blue Bed",
+                "data": 11
+            },
+            {
+                "alias": "Brown Bed",
+                "data": 12
+            },
+            {
+                "alias": "Green Bed",
+                "data": 13
+            },
+            {
+                "alias": "Red Bed",
+                "data": 14
+            },
+            {
+                "alias": "Black Bed",
+                "data": 15
+            }
+        ]
     }
 ]

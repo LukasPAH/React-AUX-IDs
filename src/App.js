@@ -6,7 +6,7 @@ function App() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
     const [q, setQ] = useState("");
-    const [searchParam] = useState(["namespace_id", "item_id", "aux_id"]);
+    const [searchParam] = useState(["namespace_id", "item_id", "alias"]);
     const [filterParam, setFilterParam] = useState(["All"]);
     const [sortParam, setSortParam] = useState(["Alphabetical"]);
     const [copied, setCopied] = useState(null);
@@ -42,8 +42,35 @@ function App() {
                         var json_6 = json_5.replace(/'/g, `"`);
                         var actual_json = JSON.parse(json_6);
 
-                        console.log(actual_json);
-                        setItems(actual_json);
+                        var more_data = require("./data/items.json");
+                        let i = 0;
+                        var list = [];
+                        while ((more_data[i], i < more_data.length)) {
+                            let a = more_data[i].identifier;
+                            var list_2 = [];
+                            for (let j = 0; j < actual_json.length; j++) {
+                                let b = actual_json[j].namespace_id;
+                                if (a == b) {
+                                    var item_list = [];
+                                    for (let k = 0; k < more_data[i].data.length; k++) {
+                                        let array = {
+                                            namespace_id: actual_json[j].namespace_id,
+                                            item_id: actual_json[j].item_id,
+                                            item_data: more_data[i].data[k].data,
+                                            alias: more_data[i].data[k].alias,
+                                        };
+                                        item_list.push(array);
+                                    }
+                                    actual_json.splice(j, 1);
+                                    list_2 = list_2.concat(item_list);
+                                }
+                            }
+                            list = list.concat(list_2);
+                            i++;
+                        }
+
+                        console.log(actual_json.concat(list));
+                        setItems(actual_json.concat(list));
                         setIsLoaded(true);
                     })
                     .catch(function (err) {
@@ -80,9 +107,9 @@ function App() {
         if (sortParam == "Alphabetical") {
             items.sort((a, b) => a.namespace_id.toString().localeCompare(b.namespace_id));
         } else if (sortParam == "ID (Ascending)") {
-            items.sort((a, b) => a.item_id - b.item_id);
+            items.sort((a, b) => a.item_id + (a.item_data ? a.item_data / 65536 : 0) - (b.item_id + (b.item_data ? b.item_data / 65536 : 0)));
         } else if (sortParam == "ID (Descending)") {
-            items.sort((a, b) => b.item_id - a.item_id);
+            items.sort((a, b) => b.item_id + (b.item_data ? b.item_data / 65536 : 0) - (a.item_id + (a.item_data ? a.item_data / 65536 : 0)));
         }
         return items.filter((item) => {
             if (item.item_id < 256 && filterParam == "Block") {
@@ -195,8 +222,8 @@ function App() {
                                 <article className="card" key={item.id}>
                                     <div
                                         onClick={function name() {
-                                            console.log(item.item_id * 65536 + 0); /*add item.item_data when it works again in place of 0*/
-                                            navigator.clipboard.writeText(item.item_id * 65536 + 0);
+                                            console.log(item.item_id * 65536 + (item.item_data ? item.item_data : 0)); /*add item.item_data when it works again in place of 0*/
+                                            navigator.clipboard.writeText(item.item_id * 65536 + (item.item_data ? item.item_data : 0));
                                             if (!copied) {
                                                 setTimeout(clearCopyMessage, 4000);
                                             } else {
@@ -209,19 +236,27 @@ function App() {
                                             <div className="flex">
                                                 <i className={`icon-minecraft icon-minecraft-${item.namespace_id.replace("_", "-")} item_icon`}></i>
                                                 <div className="spacer"></div>
-                                                <h4 className="card-header">minecraft:{item.namespace_id}</h4>
+                                                <h4 className="card-header">
+                                                    minecraft:{item.namespace_id}
+                                                    {item.item_data ? ":" : ""}
+                                                    {item.item_data ? item.item_data : ""}
+                                                </h4>
+                                            </div>
+                                            <div className="flex">
+                                                <div className="spacer"></div>
+                                                <h5 className="card-header">{item.alias}</h5>
                                             </div>
                                         </div>
                                         <div className="card-content">
                                             <ol className="card-list" id="test">
                                                 <li>
-                                                    AUX: <span>{item.item_id * 65536 + 0}</span> {/*add item.item_data when it works again in place of 0*/}
-                                                </li>
-                                                <li>
                                                     Numerical ID: <span>{item.item_id}</span>
                                                 </li>
                                                 <li>
-                                                    Data Value: <span>0</span> {/*this should be changed to item.item_data when it works again in place of 0*/}
+                                                    AUX: <span>{item.item_id * 65536 + (item.item_data ? item.item_data : 0)}</span> {/*add item.item_data when it works again in place of 0*/}
+                                                </li>
+                                                <li>
+                                                    Data Value: <span>{item.item_data ? item.item_data : 0}</span> {/*this should be changed to item.item_data when it works again in place of 0*/}
                                                 </li>
                                             </ol>
                                         </div>
