@@ -77,11 +77,23 @@ function App() {
 
     function search(items) {
         return items.filter((item) => {
-            if (item.type == filterParam) {
-                return searchParam.some((newItem) => {
-                    return item[newItem].toString().toLowerCase().indexOf(q.toLowerCase()) > -1;
-                });
+            if (item.item_id < 256 && filterParam == "Block") {
+                try {
+                    return searchParam.some((newItem) => {
+                        return item[newItem].toString().toLowerCase().indexOf(q.toLowerCase()) > -1;
+                    });
+                } catch {
+                    return;
+                }
             } else if (filterParam == "All") {
+                try {
+                    return searchParam.some((newItem) => {
+                        return item[newItem].toString().toLowerCase().indexOf(q.toLowerCase()) > -1;
+                    });
+                } catch {
+                    return;
+                }
+            } else if (item.item_id >= 256 && filterParam == "Item (New)") {
                 try {
                     return searchParam.some((newItem) => {
                         return item[newItem].toString().toLowerCase().indexOf(q.toLowerCase()) > -1;
@@ -107,10 +119,7 @@ function App() {
                 <h1 className="fixedPosition">{copied ? "Copied" : ""}</h1>
                 <div className="wrapper">
                     <div className="search-wrapper">
-                        <label htmlFor="search-form">
-                            <input type="search" name="search-form" id="search-form" className="search-input" placeholder="Search" value={q} onChange={(e) => setQ(e.target.value)} />
-                            <span className="sr-only">Search here</span>
-                        </label>
+                        <input type="search" name="search-form" id="search-form" className="search-input" placeholder="Search" value={q} onChange={(e) => setQ(e.target.value)} />
                         <div className="select">
                             <select
                                 onChange={(e) => {
@@ -124,7 +133,6 @@ function App() {
                                     }
                                 }}
                                 className="custom-select"
-                                aria-label="Filter Countries By Region"
                             >
                                 <option value="Stable">Stable</option>
                                 <option value="Beta">Beta</option>
@@ -137,12 +145,19 @@ function App() {
                                     setFilterParam(e.target.value);
                                 }}
                                 className="custom-select"
-                                aria-label="Filter Countries By Region"
                             >
-                                <option value="All">All</option>
-                                <option value="Block">Blocks</option>
-                                <option value="Item (Old)">Items (Old)</option>
-                                <option value="Item (New)">Items (New)</option>
+                                <option className="dropdown-option" value="All">
+                                    All
+                                </option>
+                                <option className="dropdown-option" value="Block">
+                                    Blocks
+                                </option>
+                                <option className="dropdown-option" value="Item (New)">
+                                    Items (New)
+                                </option>
+                                <option className="dropdown-option" value="Item (Old)">
+                                    Items (Old)
+                                </option>
                             </select>
                             <span className="focus"></span>
                         </div>
