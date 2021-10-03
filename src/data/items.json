@@ -67,5 +67,367 @@
                 "data": 15
             }
         ]
+    },
+    {
+        "identifier": "filled_map",
+        "data": [
+            {
+                "alias": "Map",
+                "data": 0
+            },
+            {
+                "alias": "Ocean Explorer Map",
+                "data": 3
+            },
+            {
+                "alias": "Woodland Explorer Map",
+                "data": 4
+            },
+            {
+                "alias": "Treasure Map",
+                "data": 5
+            }
+        ]
+    },
+    {
+        "identifier": "potion",
+        "data": [
+            {
+                "alias": "Water Bottle",
+                "data": 0
+            },
+            {
+                "alias": "Mundane Potion",
+                "data": 1
+            },
+            {
+                "alias": "Thick Potion",
+                "data": 3
+            },
+            {
+                "alias": "Awkward Potion",
+                "data": 4
+            },
+            {
+                "alias": "Potion of Invisibility",
+                "data": 5
+            },
+            {
+                "alias": "Potion of Leaping",
+                "data": 9
+            },
+            {
+                "alias": "Potion of Fire Resistance",
+                "data": 12
+            },
+            {
+                "alias": "Potion of Swiftness",
+                "data": 14
+            },
+            {
+                "alias": "Potion of Slowness",
+                "data": 17
+            },
+            {
+                "alias": "Potion of Water Breathing",
+                "data": 19
+            },
+            {
+                "alias": "Potion of Healing",
+                "data": 21
+            },
+            {
+                "alias": "Potion of Harming",
+                "data": 23
+            },
+            {
+                "alias": "Potion of Poison",
+                "data": 25
+            },
+            {
+                "alias": "Potion of Regeneration",
+                "data": 28
+            },
+            {
+                "alias": "Potion of Strength",
+                "data": 31
+            },
+            {
+                "alias": "Potion of Weakness",
+                "data": 34
+            },
+            {
+                "alias": "Potion of Decay",
+                "data": 36
+            },
+            {
+                "alias": "Potion of the Turtle Master",
+                "data": 37
+            },
+            {
+                "alias": "Potion of Slow Falling",
+                "data": 40
+            }
+        ]
+    },
+    {
+        "identifier": "splash_potion",
+        "data": [
+            {
+                "alias": "Splash Potion",
+                "data": 0
+            },
+            {
+                "alias": "Mundane Splash Potion",
+                "data": 1
+            },
+            {
+                "alias": "Thick Splash Potion",
+                "data": 3
+            },
+            {
+                "alias": "Awkward Splash Potion",
+                "data": 4
+            },
+            {
+                "alias": "Splash Potion of Invisibility",
+                "data": 5
+            },
+            {
+                "alias": "Splash Potion of Leaping",
+                "data": 9
+            },
+            {
+                "alias": "Splash Potion of Fire Resistance",
+                "data": 12
+            },
+            {
+                "alias": "Splash Potion of Swiftness",
+                "data": 14
+            },
+            {
+                "alias": "Splash Potion of Slowness",
+                "data": 17
+            },
+            {
+                "alias": "Splash Potion of Water Breathing",
+                "data": 19
+            },
+            {
+                "alias": "Splash Potion of Healing",
+                "data": 21
+            },
+            {
+                "alias": "Splash Potion of Harming",
+                "data": 23
+            },
+            {
+                "alias": "Splash Potion of Poison",
+                "data": 25
+            },
+            {
+                "alias": "Splash Potion of Regeneration",
+                "data": 28
+            },
+            {
+                "alias": "Splash Potion of Strength",
+                "data": 31
+            },
+            {
+                "alias": "Splash Potion of Weakness",
+                "data": 34
+            },
+            {
+                "alias": "Splash Potion of Decay",
+                "data": 36
+            },
+            {
+                "alias": "Splash Potion of the Turtle Master",
+                "data": 37
+            },
+            {
+                "alias": "Splash Potion of Slow Falling",
+                "data": 40
+            }
+        ]
+    },
+    {
+        "identifier": "lingering_potion",
+        "data": [
+            {
+                "alias": "Lingering Potion",
+                "data": 0
+            },
+            {
+                "alias": "Mundane Lingering Potion",
+                "data": 1
+            },
+            {
+                "alias": "Thick Lingering Potion",
+                "data": 3
+            },
+            {
+                "alias": "Awkward Lingering Potion",
+                "data": 4
+            },
+            {
+                "alias": "Lingering Potion of Invisibility",
+                "data": 5
+            },
+            {
+                "alias": "Lingering Potion of Leaping",
+                "data": 9
+            },
+            {
+                "alias": "Lingering Potion of Fire Resistance",
+                "data": 12
+            },
+            {
+                "alias": "Lingering Potion of Swiftness",
+                "data": 14
+            },
+            {
+                "alias": "Lingering Potion of Slowness",
+                "data": 17
+            },
+            {
+                "alias": "Lingering Potion of Water Breathing",
+                "data": 19
+            },
+            {
+                "alias": "Lingering Potion of Healing",
+                "data": 21
+            },
+            {
+                "alias": "Lingering Potion of Harming",
+                "data": 23
+            },
+            {
+                "alias": "Lingering Potion of Poison",
+                "data": 25
+            },
+            {
+                "alias": "Lingering Potion of Regeneration",
+                "data": 28
+            },
+            {
+                "alias": "Lingering Potion of Strength",
+                "data": 31
+            },
+            {
+                "alias": "Lingering Potion of Weakness",
+                "data": 34
+            },
+            {
+                "alias": "Lingering Potion of Decay",
+                "data": 36
+            },
+            {
+                "alias": "Lingering Potion of the Turtle Master",
+                "data": 37
+            },
+            {
+                "alias": "Lingering Potion of Slow Falling",
+                "data": 40
+            }
+        ]
+    },
+    {
+        "identifier": "skull",
+        "data": [
+            {
+                "alias": "Skeleton Skull",
+                "data": 0
+            },
+            {
+                "alias": "Wither Skeleton Skull",
+                "data": 1
+            },
+            {
+                "alias": "Zombie Head",
+                "data": 2
+            },
+            {
+                "alias": "Head",
+                "data": 3
+            },
+            {
+                "alias": "Creeper Head",
+                "data": 4
+            },
+            {
+                "alias": "Dragon Head",
+                "data": 5
+            }
+        ]
+    },
+    {
+        "identifier": "banner",
+        "data": [
+            {
+                "alias": "Black Banner",
+                "data": 0
+            },
+            {
+                "alias": "Red Banner",
+                "data": 1
+            },
+            {
+                "alias": "Green Banner",
+                "data": 2
+            },
+            {
+                "alias": "Brown Banner",
+                "data": 3
+            },
+            {
+                "alias": "Blue Banner",
+                "data": 4
+            },
+            {
+                "alias": "Purple Banner",
+                "data": 5
+            },
+            {
+                "alias": "Cyan Banner",
+                "data": 6
+            },
+            {
+                "alias": "Light Gray Banner",
+                "data": 7
+            },
+            {
+                "alias": "Gray Banner",
+                "data": 8
+            },
+            {
+                "alias": "Pink Banner",
+                "data": 9
+            },
+            {
+                "alias": "Lime Banner",
+                "data": 10
+            },
+            {
+                "alias": "Yellow Banner",
+                "data": 11
+            },
+            {
+                "alias": "Light Blue Banner",
+                "data": 12
+            },
+            {
+                "alias": "Magenta Banner",
+                "data": 13
+            },
+            {
+                "alias": "Orange Banner",
+                "data": 14
+            },
+            {
+                "alias": "White Banner",
+                "data": 15
+            }
+        ]
     }
 ]
