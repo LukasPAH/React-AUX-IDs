@@ -8,6 +8,7 @@ function App() {
     const [q, setQ] = useState("");
     const [searchParam] = useState(["namespace_id", "item_id", "aux_id"]);
     const [filterParam, setFilterParam] = useState(["All"]);
+    const [sortParam, setSortParam] = useState(["Alphabetical"]);
     const [copied, setCopied] = useState(null);
     const [stable, isStable] = useState(true);
     const [update, shouldUpdate] = useState(false);
@@ -76,6 +77,13 @@ function App() {
     }, []);
 
     function search(items) {
+        if (sortParam == "Alphabetical") {
+            items.sort((a, b) => a.namespace_id.toString().localeCompare(b.namespace_id));
+        } else if (sortParam == "ID (Ascending)") {
+            items.sort((a, b) => a.item_id - b.item_id);
+        } else if (sortParam == "ID (Descending)") {
+            items.sort((a, b) => b.item_id - a.item_id);
+        }
         return items.filter((item) => {
             if (item.item_id < 256 && filterParam == "Block") {
                 try {
@@ -120,6 +128,25 @@ function App() {
                 <div className="wrapper">
                     <div className="search-wrapper">
                         <input type="search" name="search-form" id="search-form" className="search-input" placeholder="Search" value={q} onChange={(e) => setQ(e.target.value)} />
+                        <div className="select">
+                            <select
+                                onChange={(e) => {
+                                    setSortParam(e.target.value);
+                                }}
+                                className="custom-select"
+                            >
+                                <option className="dropdown-option" value="Alphabetical">
+                                    Alphabetical
+                                </option>
+                                <option className="dropdown-option" value="ID (Ascending)">
+                                    ID (Ascending)
+                                </option>
+                                <option className="dropdown-option" value="ID (Descending)">
+                                    ID (Descending)
+                                </option>
+                            </select>
+                            <span className="focus"></span>
+                        </div>
                         <div className="select">
                             <select
                                 onChange={(e) => {
