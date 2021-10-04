@@ -429,5 +429,263 @@
                 "data": 15
             }
         ]
+    },
+    {
+        "identifier": "stone",
+        "data": [
+            {
+                "alias": "Stone",
+                "data": 0
+            },
+            {
+                "alias": "Andesite",
+                "data": 1
+            },
+            {
+                "alias": "Smooth Andesite",
+                "data": 2
+            },
+            {
+                "alias": "Diorite",
+                "data": 3
+            },
+            {
+                "alias": "Smooth Diorite",
+                "data": 4
+            },
+            {
+                "alias": "Granite",
+                "data": 5
+            },
+            {
+                "alias": "Smooth Granite",
+                "data": 6
+            }
+        ]
+    },
+    {
+        "identifier": "dirt",
+        "data": [
+            {
+                "alias": "Dirt",
+                "data": 0
+            },
+            {
+                "alias": "Coarse Dirt",
+                "data": 1
+            }
+        ]
+    },
+    {
+        "identifier": "planks",
+        "data": [
+            {
+                "alias": "Oak Planks",
+                "data": 0
+            },
+            {
+                "alias": "Spruce Planks",
+                "data": 1
+            },
+            {
+                "alias": "Birch Planks",
+                "data": 2
+            },
+            {
+                "alias": "Jungle Planks",
+                "data": 3
+            },
+            {
+                "alias": "Acacia Planks",
+                "data": 4
+            },
+            {
+                "alias": "Dark Oak Planks",
+                "data": 5
+            }
+        ]
+    },
+    {
+        "identifier": "sapling",
+        "data": [
+            {
+                "alias": "Oak Sapling",
+                "data": 0
+            },
+            {
+                "alias": "Spruce Sapling",
+                "data": 1
+            },
+            {
+                "alias": "Birch Sapling",
+                "data": 2
+            },
+            {
+                "alias": "Jungle Sapling",
+                "data": 3
+            },
+            {
+                "alias": "Acacia Sapling",
+                "data": 4
+            },
+            {
+                "alias": "Dark Oak Sapling",
+                "data": 5
+            }
+        ]
+    },
+    {
+        "identifier": "sand",
+        "data": [
+            {
+                "alias": "Sand",
+                "data": 0
+            },
+            {
+                "alias": "Red Sand",
+                "data": 1
+            }
+        ]
+    },
+    {
+        "identifier": "log",
+        "data": [
+            {
+                "alias": "Oak Log",
+                "data": 0
+            },
+            {
+                "alias": "Spruce Log",
+                "data": 1
+            },
+            {
+                "alias": "Birch Log",
+                "data": 2
+            },
+            {
+                "alias": "Jungle Log",
+                "data": 3
+            }
+        ]
+    },
+    {
+        "identifier": "leaves",
+        "data": [
+            {
+                "alias": "Oak Leaves",
+                "data": 0
+            },
+            {
+                "alias": "Spruce Leaves",
+                "data": 1
+            },
+            {
+                "alias": "Birch Leaves",
+                "data": 2
+            },
+            {
+                "alias": "Jungle Leaves",
+                "data": 3
+            }
+        ]
+    },
+    {
+        "identifier": "sponge",
+        "data": [
+            {
+                "alias": "Sponge",
+                "data": 0
+            },
+            {
+                "alias": "Wet Sponge",
+                "data": 1
+            }
+        ]
+    },
+    {
+        "identifier": "sandstone",
+        "data": [
+            {
+                "alias": "Sandstone",
+                "data": 0
+            },
+            {
+                "alias": "Chiseled Sandstone",
+                "data": 1
+            },
+            {
+                "alias": "Smooth Sandstone",
+                "data": 2
+            }
+        ]
+    },
+    {
+        "identifier": "wool",
+        "data": [
+            {
+                "alias": "White Wool",
+                "data": 0
+            },
+            {
+                "alias": "Orange Wool",
+                "data": 1
+            },
+            {
+                "alias": "Magenta Wool",
+                "data": 2
+            },
+            {
+                "alias": "Light Blue Wool",
+                "data": 3
+            },
+            {
+                "alias": "Yellow Wool",
+                "data": 4
+            },
+            {
+                "alias": "Lime Wool",
+                "data": 5
+            },
+            {
+                "alias": "Pink Wool",
+                "data": 6
+            },
+            {
+                "alias": "Gray Wool",
+                "data": 7
+            },
+            {
+                "alias": "Light Gray Wool",
+                "data": 8
+            },
+            {
+                "alias": "Cyan Wool",
+                "data": 9
+            },
+            {
+                "alias": "Purple Wool",
+                "data": 10
+            },
+            {
+                "alias": "Blue Wool",
+                "data": 11
+            },
+            {
+                "alias": "Brown Wool",
+                "data": 12
+            },
+            {
+                "alias": "Green Wool",
+                "data": 13
+            },
+            {
+                "alias": "Red Wool",
+                "data": 14
+            },
+            {
+                "alias": "Black Wool",
+                "data": 15
+            }
+        ]
     }
 ]
