@@ -29,15 +29,25 @@ function App() {
                         // Parse the text
                         var doc = parser.parseFromString(html, "text/html");
 
+                        let tableIndex = 9
+                        const a = data[gameType][1].localeCompare("1.19.80", undefined, { numeric: true, sensitivity: 'base' })
+                        console.warn(a)
+                        if (a !== -1) {
+                            tableIndex = 10
+                            console.warn("aaaaaaaa")
+                        }
+
                         // You can now even select part of that html as you would in the regular DOM
                         // Example:
-                        var docArticle = doc.getElementsByTagName("table").item(9).textContent;
+                        var docArticle = doc.getElementsByTagName("table").item(tableIndex).textContent;
 
                         // Formatting of text into json, then convert to JSON.
                         var json_1 = docArticle.replace("\n Name ID Aux Values \n\n", "[ { 'namespace_id': '");
                         var json_2 = json_1.replace(/\n\n\n\n/g, " }, { 'namespace_id': '");
+                        console.log(json_2)
                         var json_3 = json_2.replace(/\n0 = Skeleton1 = Wither2 = Zombie3 = Steve4 = Creeper5 = Dragon\n\n\n/g, " }, { 'namespace_id': '");
-                        var json_4 = json_3.replace(/\n\n\n/g, " } ]");
+                        var json_3_5 = json_3.replace(/\n0 = Skeleton1 = Wither2 = Zombie3 = Steve4 = Creeper5 = Dragon6 = Piglin\n\n\n/g, " }, { 'namespace_id': '");
+                        var json_4 = json_3_5.replace(/\n\n\n/g, " } ]");
                         var json_5 = json_4.replace(/\n/g, "', 'item_id': ");
                         var json_6 = json_5.replace(/'/g, `"`);
                         var actual_json = JSON.parse(json_6);
